@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10">
+    <h3 class = "text-white my-5">Dashboard Page</h3>
+    {% block msg %}
+    {% if messages %}
+    {% for mes in messages %}
+    <p {% if mes.tags %} class = "alert alert-{{mes.tags}} mb-3" {% endif %}>{{mes}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endblock msg %}
+</div>
+{% endblock content %}

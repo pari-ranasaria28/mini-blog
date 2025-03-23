@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10">
+  <h3 class="text-white my-5">Home Page</h3>
+  <div class="row"> 
+      {% for post in posts %}
+      <div>
+          <div class="h-10 p-5 my-color border rounded-3">
+              <h2>{{ post.title }}</h2>
+              <p>{{ post.desc }}</p>
+              {% comment %} <button class="btn btn-outline-secondary" type="button">Read More....</button> {% endcomment %}
+          </div>
+      </div>
+      <hr>
+      {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}
