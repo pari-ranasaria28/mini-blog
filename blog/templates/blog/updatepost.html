@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10">
+    <h3 class="my-5">Dashboard/ Update Post</h3>
+    {% if messages %}
+    {% for mes in messages %}
+    <p {% if mes.tags %} class = "alert alert-{{mes.tags}} mb-3" {% endif %}>{{mes}}</p>
+    {% endfor %}
+    {% endif %}
+    <form action="" method = "POST" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="form-group">
+        {{fm.label_tag}} {{fm}} 
+        <small class ="text-warning">{{fm.errors|striptags}}</small>
+        </div>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Update" class="btn btn-primary">
+        <a href="{% url 'dashboard' %}" class="btn btn-danger">Cancel</a>
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class ="alert alert-danger my-3">{{error}}</p>
+        <br><br>
+        {% endfor %}
+    </form>
+    {% endif %}
+</div>
+{% endblock content %}

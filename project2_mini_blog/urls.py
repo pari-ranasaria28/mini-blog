@@ -27,4 +27,8 @@ urlpatterns = [
     path('signup/',views.sign_up,name="signup"),
     path('signin/',views.sign_in,name="signin"),
     path('signout/',views.sign_out,name="signout"),
+    path('add_post/',views.add_post,name="addpost"),
+    path('update_post/<int:id>/',views.update_post,name="updatepost"),
+    path('delete_post/<int:id>/',views.delete_post,name="deletepost"),
+    path('no_permission/',views.no_permission,name="nopermission"),
 ]
