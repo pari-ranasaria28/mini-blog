@@ -1,0 +1,11 @@
+body{
+    background-color: rgb(4, 4, 50);
+    color: antiquewhite;
+}
+.my-color{
+    background-color: skyblue;
+    color: black;
+}
+.form-control{
+    background-color: lightblue;
+}
